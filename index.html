@@ -25,9 +25,12 @@
 							<li class="menu__item">
 								<a class="menu__link" href="#">Company</a>
 							</li>
-							<a class="header__logo" href="/">
-								<img class="header__logo-picture" src="images/logo.svg" alt="Logo Susparsa">
-							</a>
+							<li>
+								<a class="header__logo" href="/">
+									<span class="v-h">Susparsa</span>
+									<img class="header__logo-picture" src="images/logo.svg" alt="">
+								</a>
+							</li>
 							<li class="menu__item">
 								<a class="menu__link" href="#">Account</a>
 							</li>
@@ -66,7 +69,7 @@
 							<form class="product-card__form" action="#">
 								<div class="product-card__parameter">
 									<div class="product-card__label">Size</div>
-									<select class="product-size">
+									<select class="product-size" name="product_size">
 										<option value="xs">XS</option>
 										<option value="s">S</option>
 										<option value="m">M</option>
@@ -135,7 +138,7 @@
 										</li>
 										<li class="input-group__item">
 											<label class="input-radio">
-												<input class="input-radio__input" type="radio" name="product_color" data-name-display="Purple latte" value="purple">
+												<input class="input-radio__input" type="radio" name="product_color" data-name-display="Purple latte" value="purple" aria-hidden="true">
 												<span class="input-radio__visual input-radio-color">
 													<span class="input-radio-color__sample" style="background-color: #ba9be5;"></span>
 												</span>
@@ -160,7 +163,7 @@
 									</ul>										
 								</fieldset>
 								<div class="product-card__parameter product-card__parameter_last">
-									<span class="product-card__label">Quantity</span>
+									<label class="product-card__label" for="productQuantity">Quantity</label>
 									<div class="input-quantity">
 										<button class="input-quantity__btn" data-action="decrease">&minus;</button>
 										<input type="number" class="input-quantity__field" id="productQuantity" name="product_quantity" value="1">
@@ -184,13 +187,13 @@
 									<h2 id="productInfo1">
 										<button aria-controls="productInfo1Body" class="accordion__item-title" >Sizing & Fit</button>
 									</h2>
-									<div class="accordion__item-body">Olga is 175cm, she is wearing a size S.</div>
+									<div class="accordion__item-body" id="productInfo1Body">Olga is 175cm, she is wearing a size S.</div>
 								</div>
 								<div class="accordion__item">
 									<h2 id="productInfo1">
 										<button aria-controls="productInfo2Body" class="accordion__item-title">Composition & Care</button>
 									</h2>
-									<div class="accordion__item-body" id="productInfoBody2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+									<div class="accordion__item-body" id="productInfo2Body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
 								</div>
 								<div class="accordion__item">
 									<h2>
@@ -219,19 +222,19 @@
 								<div class="products-grid__item-name"><a href="#">Product name</a></div>
 								<div class="colors-palette products-grid__item-colors-palette">
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #C88252;" aria-label="orange">
+										<span class="colors-palette__sample" style="background-color: #C88252;" title="orange">
 										</span>
 									</div>
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #e04acc;" aria-label="pink">
+										<span class="colors-palette__sample" style="background-color: #e04acc;" title="pink">
 										</span>
 									</div>
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #292fad;" aria-label="blue">
+										<span class="colors-palette__sample" style="background-color: #292fad;" title="blue">
 										</span>
 									</div>
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #68da00;" aria-label="green">
+										<span class="colors-palette__sample" style="background-color: #68da00;" title="green">
 										</span>
 									</div>
 								</div>
@@ -246,15 +249,15 @@
 								<div class="products-grid__item-name"><a href="#">Very long product name for testing purposes</a></div>
 								<div class="colors-palette products-grid__item-colors-palette">
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: red;" aria-label="red">
+										<span class="colors-palette__sample" style="background-color: red;" title="red">
 										</span>
 									</div>
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: green;" aria-label="green">
+										<span class="colors-palette__sample" style="background-color: green;" title="green">
 										</span>
 									</div>
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: blue;" aria-label="blue">
+										<span class="colors-palette__sample" style="background-color: blue;" title="blue">
 										</span>
 									</div>
 								</div>
@@ -272,19 +275,19 @@
 								<div class="products-grid__item-name"><a href="#">Product name</a></div>
 								<div class="colors-palette products-grid__item-colors-palette">
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #C88252;" aria-label="orange">
+										<span class="colors-palette__sample" style="background-color: #C88252;" title="orange">
 										</span>
 									</div>
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #e04acc;" aria-label="pink">
+										<span class="colors-palette__sample" style="background-color: #e04acc;" title="pink">
 										</span>
 									</div>
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #292fad;" aria-label="blue">
+										<span class="colors-palette__sample" style="background-color: #292fad;" title="blue">
 										</span>
 									</div>
 									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #68da00;" aria-label="green">
+										<span class="colors-palette__sample" style="background-color: #68da00;" title="green">
 										</span>
 									</div>
 								</div>
@@ -376,7 +379,7 @@
 								<button class="btn btn_primary">Subscribe</button>
 								</div>
 								<div class="form__input-group">
-									<input class="checkbox" type="checkbox" name="agree" id="agree"> I agree to give you all my data
+									<input class="checkbox" type="checkbox" name="agree" id="agree" aria-label="My data"> I agree to give you all my data
 								</div>
 
 							</form>
