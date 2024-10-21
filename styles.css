@@ -1088,3 +1088,14 @@ fieldset legend {
   margin-right: 4px;
   margin-bottom: 8px;
 }
+
+.skiplink {
+  position: absolute;
+  top: -200px;
+  left: 2px;
+  transition: top 0.2s;
+}
+
+.skiplink:focus {
+  top: 20px;
+}
