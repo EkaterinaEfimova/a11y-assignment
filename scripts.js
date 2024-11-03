@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });    
   });
 
-  const accordions = document.querySelectorAll('.accordion__item');
+  /*const accordions = document.querySelectorAll('.accordion__item');
   accordions.forEach((accordion) => {
     const accordionTitle = accordion.querySelector('.accordion__item-title');
     accordionTitle.addEventListener('click', () => {
@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });    
   });
 
-  const modalTarget = document.querySelectorAll('.modal-target');
+ const modalTarget = document.querySelectorAll('.modal-target');
   modalTarget.forEach((modalTarget)=> {
     modalTarget.addEventListener('click', ()=>{
       const modalWindow = document.querySelector('.modal');
@@ -54,7 +54,60 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const showModal = (modalWindow) => {
     modalWindow.classList.add('show-modal');
+  }*/
+
+
+
+
+class Accordion {
+  constructor(domNode) {
+    this.rootEl = domNode;
+    this.buttonEl = this.rootEl.querySelector('button[aria-expanded]');
+
+    const controlsId = this.buttonEl.getAttribute('aria-controls');
+    this.contentEl = document.getElementById(controlsId);
+
+    this.open = this.buttonEl.getAttribute('aria-expanded') === 'true';
+
+    // add event listeners
+    this.buttonEl.addEventListener('click', this.onButtonClick.bind(this));
   }
 
+  onButtonClick() {
+    this.toggle(!this.open);
+  }
 
+  toggle(open) {
+    // don't do anything if the open state doesn't change
+    if (open === this.open) {
+      return;
+    }
+
+    // update the internal state
+    this.open = open;
+
+    // handle DOM updates
+    this.buttonEl.setAttribute('aria-expanded', `${open}`);
+    if (open) {
+      this.contentEl.removeAttribute('hidden');
+    } else {
+      this.contentEl.setAttribute('hidden', '');
+    }
+  }
+
+  // Add public open and close methods for convenience
+  open() {
+    this.toggle(true);
+  }
+
+  close() {
+    this.toggle(false);
+  }
+}
+
+// init accordions
+const accordions = document.querySelectorAll('.accordion-group h3');
+accordions.forEach((accordionEl) => {
+  new Accordion(accordionEl);
+});
 })
