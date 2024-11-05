@@ -37,7 +37,6 @@
 
 a {
   text-decoration: none;
-  /*outline: none;*/
 }
 
 p {
@@ -84,7 +83,6 @@ button {
   background: none;
   padding: 0;
   margin: 0;
-  /*outline: none;*/
 }
 
 button {
@@ -501,6 +499,10 @@ fieldset legend {
   border-bottom: 1px var(--border-color-light) solid;
 }
 
+.accordion__item:focus-within {
+  outline: auto;
+}
+
 .accordion__item:last-child {
   border-bottom: none;
 }
@@ -508,6 +510,7 @@ fieldset legend {
 .accordion__item-trigger {
   width: 100%;
 }
+
 .accordion__item-title {
   display: block;
   width: 100%;
@@ -713,40 +716,6 @@ fieldset legend {
   text-decoration: underline;
 }
 
-/*.modal {
-  display: none;
-}
-
-.modal-backdrop  {
-  position: fixed;
-  z-index: 1000000;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-body {
-  position: absolute;
-  box-sizing: border-box;
-  background-color: #fff;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  border-radius: 2px;
-}
-
-.show-modal {
-  display: block;
-}*/
 .modal[open] {
   display: flex;
   flex-direction: column;
@@ -799,8 +768,6 @@ fieldset legend {
   border: 1px solid;
   padding: 10px;
 }
-
-
 
 .product-card__infolabel {
   font-size: 16px;
@@ -1036,7 +1003,6 @@ fieldset legend {
 }
 
 .products-grid__item:focus-within {
-  /*border: 2px solid black;*/
   outline: auto;
   outline-offset: 5px;
 }
@@ -1104,8 +1070,6 @@ fieldset legend {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  /*margin-left: -2px;
-  margin-right: -2px;*/
 }
 
 .colors-palette__item {
